@@ -5,7 +5,7 @@ let boton=false;
 let xtotal, ytotal, ancho, alto, tamaño, tamb;
 
 function preload() {
-  for (let i=0; i<26; i++) {
+  for (let i=0; i<25; i++) {
     imagenes[i]=loadImage('data/escena'+i+'.jpeg');
   }
 }
@@ -15,17 +15,17 @@ function setup() {
   xtotal=640;
   ytotal=480;
   ancho=110;
-  alto =400;
+  alto =420;
   tamaño=200;
   tamb=50;
 
   textAlign(CENTER, CENTER);
   textSize(22);
   texto[0]='el zorro y el bosque \n de ray bradbury';
-  texto[1]='Ann y Roger kristen disfrutan de unas vacaciones en el México de 1938 bajo el nombre de susan y william travis';
-  texto[2]='Llegaron gracias a una agencia de viajes en el tiempo, huyendo desde 2155 para escapar de la guerra y la conscripción'; 
-  texto[3]='Pronto notan que un hombre los sigue con insistencia';
-  texto[4]='Seria demaciado sospechoso, pero lo intentan igualmente, pero son interceptados y acorralados por el caballero Quien se hace llamar señor simms';
+  texto[1]='Ann y Roger kristen disfrutan de unas vacaciones en el México de 1938 bajo el nombre de susan y william travis'; 
+  texto[2]='Llegaron gracias a una agencia de viajes en el tiempo, huyendo desde 2155 para escapar de la guerra y la conscripción';   
+  texto[3]='Pronto notan que un hombre los sigue con insistencia';  
+  texto[4]='Seria demaciado sospechoso, pero lo intentan igualmente, pero son interceptados y acorralados por el caballero Quien se hace llamar señor simms'; 
   texto[5]='El señor simms intenta sacarles informacion, probar que son los fugitivos, revelandose como policia del tiempo y les advierte que no existe salida, solo retrasar lo inevitable. ann y roger vuelven a su cuarto, intentando pensar un plan';
   texto[6]='Se mezclan con los turistas y locales, intentando parecer una pareja común ingresando a un cafe y el hombre decide hablarles, se hace llamar sr.simms'; 
   texto[7]='El sr.simms anuncia que sabe su secreto, sin importar cuanto mientan, asi que, en su lugar de descanso, deciden evitarlo lo mas posible y jamas estar solos';
@@ -50,8 +50,8 @@ function setup() {
 
 function draw() {
   image(imagenes[click], 0, 0, xtotal, ytotal);
-  fill(200, 200, 0);
-  rect(20, 280, 600, 140);
+  fill(0, 255, 0, 60);
+  rect(20, 300, 600, 110, 50);
   fill(255);
   text(texto[click], 40, 300, 560, 120);
 
@@ -102,49 +102,49 @@ function draw() {
 
 function mousePressed() {
     if (click===5) {
-click=8;
-return;
+       click=8;
+        return;
   }if (click===13) {
-click=15;
-return;
+      click=15;
+      return;
   }if (click===18) {
-click=20;
-return;
+    click=20;
+    return;
   }
   
   if (click===0) {
     if (press(ancho, alto, tamaño, tamb)) {
       click=1; 
-  return; }
+      return; }
     if (press(ancho*3, alto, tamaño, tamb)) {
-      click=25; 
-  return; 
+      click=24; 
+     return; 
 }
   }
   if (click===3) {
     if (press(ancho, alto, tamaño, tamb)) { 
       click=4;
-    return;
+      return;
   }
     if (press(ancho*3, alto, tamaño, tamb)) { 
       click=6;
-  return; 
+      return; 
 }
   }
   if (click===8) {
     if (press(ancho, alto, tamaño, tamb)) { 
       click=9; 
-    return; 
+      return; 
   }
     if (press(ancho*3, alto, tamaño, tamb)) { 
       click=11;
-    return;
+      return;
   }
   }
   if (click===10) {
     if (press(ancho, alto, tamaño, tamb)) { 
       click=1; 
-  return; 
+     return; 
 }
     if (press(ancho*3, alto, tamaño, tamb)) {
       click=8; 
@@ -154,21 +154,19 @@ return;
   if (click===12) {
     if (press(ancho, alto, tamaño, tamb)) {
     click=14; 
-  return; }
+    return; }
     if (press(ancho*3, alto, tamaño, tamb)) { 
       click=13;
-  return; }
+     return; }
   }
   if (click===16) {
     if (press(ancho, alto, tamaño, tamb)) { 
     click=17; 
     return;
   }
-    
-    
     if (press(ancho*3, alto, tamaño, tamb)){
     click=19; 
-  return; 
+    return; 
 
 }
   }
@@ -177,12 +175,17 @@ return;
       click=23; 
       return;
 }
-    if (press(ancho*3, alto, tamaño, tamb)) { click=21; return; }
+    if (press(ancho*3, alto, tamaño, tamb)) {
+      click=21; 
+     return; 
+}
   }
   if (click===22 || click===23) {
     if (press(ancho*2, alto, tamaño, tamb)) { 
     
-    click=0; return; }
+    click=0; 
+   return;
+}
   }
 
   if (!boton) {
@@ -194,21 +197,21 @@ return;
 }
 
 function boto1(px, py, ta, tb, textob) {
-  fill(255, 0, 255);
+  fill(255, 0, 0,80);
   rect(px, py, ta, tb);
   fill(255);
   text(textob, px + ta/2, py + tb/2);
 }
 
 function boto2(x, y, t1, t2, dec) {
-  fill(255, 0, 255);
+  fill(255, 0, 0,80);
   rect(x, y, t1, t2);
   fill(255);
   text(dec, x + t1/2, y + t2/2);
 }
 
 function boto3(pos1, pos2, ta, tab, tex) {
-  fill(255, 0, 255);
+  fill(255, 0, 0,80);
   rect(pos1, pos2, ta, tab);
   fill(255);
   text(tex, pos1 + ta/2, pos2 + tab/2);

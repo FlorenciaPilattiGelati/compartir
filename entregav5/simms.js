@@ -6,7 +6,7 @@ class Simms{
   }
 dibujarSimms(){
   fill(255,0,0);
-  rect(this.posx, this.posy, this.tam, this.tam);
+  image(imgmalo, this.posx, this.posy, this.tam, this.tam);
 }
 
 moverSimms(){

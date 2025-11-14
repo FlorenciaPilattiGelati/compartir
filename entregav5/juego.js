@@ -6,7 +6,8 @@ class Juego{
     this.perder=[];
     this.puntos=[];
     this.Tiempo=new Tiempo();
-    this.Boton=new Boton( width/4, height/2,tam*4,tam*4);
+    this.Boton=new Boton( width/2.5, height/1.5,tam*2,tam*2);
+    this.Botonfin=new Boton(width/3, height/1.5,tam*2,tam*4);
     this.puntaje=0;
     this.estado="inicio";
     for (let i=0; i<this.cant; i++) {
@@ -16,13 +17,18 @@ class Juego{
 
 }
 dibujar(){
+  print(mouseX);
+  print(mouseY);
    if (this.estado ==="inicio") {
       fill(200);
       rect(0, 0, width, height);
       fill(0, 0, 255);
       textSize(50);
-      text("carrera contra el tiempo", 200, 200);
-      this.Boton.dibujarboton();
+      text("Carrera contra el tiempo", 300, 100);
+      textAlign(CENTER, CENTER);
+      textSize(15);
+      text("Ann y rogger deben llegar al hotel a desayunar, pero no va a ser sencillo con el señor simms rondando Mantenete en movimiento, de izquierda a derecha, aercate a grupos, que van a estar marcados en verde, para protejerte y lo mas importante no te acerques a ninguno de los caballeros de traje gris, que van a estar marcados en rojo.", width/3.5, height/4.9, 250,250);
+      this.Boton.dibujarboton("Jugar");
     }
     
     if (this.estado==="jugando") {
@@ -30,7 +36,8 @@ dibujar(){
     this.Pareja.caminar();
     this.Pareja.moverPareja();
     textSize(30);
-    fill(255, 0, 0);
+    fill(255);
+    textAlign(LEFT);
     text("puntos:"+this.puntaje, 50, 50);  
     this.Tiempo.dibujartiempo();
      this.Tiempo.bajar();
@@ -44,15 +51,15 @@ dibujar(){
   if (this.estado==="perdiste"){
   background(0);
   fill(255,0,0);
-    textAlign(CENTER, CENTER);
+  textAlign(CENTER, CENTER);
   textSize(30);
   text("perdiste", 
- width/4, height/16, 250,250);
+ width/3.5, height/16, 250,250);
   textAlign(CENTER, CENTER);
   textSize(20);
   text("fueron atrapados por la policia del tiempo, ahora no hay escapatoria. confinados a un futuro desolado ann y roger regresaron a su tiempo", 
- width/4, height/4, 250,250);
- this.Boton.dibujarboton2();
+ width/3.5, height/4, 250,250);
+ this.Botonfin.dibujarboton("Regresar al inicio");
 
   
   }
@@ -61,14 +68,15 @@ dibujar(){
     textAlign(CENTER, CENTER);
   textSize(30);
   text("ganaste", 
- width/4, height/16, 250,250);
+ width/3.5, height/16, 250,250);
   textAlign(CENTER, CENTER);
   textSize(20);
   text("felicidades!, ann y roger legaron al hotel sin ser vistos. pero...podras seguir con la misma suerte?", 
- width/4, height/4, 250,250);
+ width/3.5, height/4, 250,250);
+ textAlign(LEFT);
  text("puntos:"+this.puntaje, 
- width/4, height/2, 250,250);
-this.Boton.dibujarboton2();
+ 30, 16, 25,25);
+this.Botonfin.dibujarboton("Regresar al inicio");
 
   }
 }

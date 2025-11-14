@@ -6,10 +6,11 @@ class Grupo{
     this.activo=true;
   }
 dibujarGrupo(){
+  if(this.activo==true){
   fill(0,255,0);
-  rect(this.p1, this.p2, this.tamo, this.tamo);
+  image(imggrupo, this.p1, this.p2, this.tamo, this.tamo);
 }
-
+}
 moverGrupo(){
 
       if (this.p2>height) {
@@ -21,6 +22,7 @@ moverGrupo(){
   }
 grupono() {
     this.activo=false;
+    puntosonido.play();
   }
 
 

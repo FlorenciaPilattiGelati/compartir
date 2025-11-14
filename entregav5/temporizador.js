@@ -1,10 +1,10 @@
 class Tiempo{
 constructor(){
-  this.tiempo=45
+  this.tiempo=20
 }
 dibujartiempo(){
   textSize(30);
-fill(255, 0, 0);
+fill(255);
   text("tiempo:"+this.tiempo, 200, 50);  
 }
 bajar(){

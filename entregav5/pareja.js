@@ -6,7 +6,7 @@ constructor(anch){
 }
 dibujarPareja(){
   fill(0, 0, 255);
-    rect(this.pox, this.poy, this.tamo, this.tamo);
+   image(imgpareja, this.pox, this.poy, this.tamo, this.tamo);
   
 }
 caminar(){

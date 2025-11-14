@@ -105,7 +105,7 @@ reiniciar() {
     this.puntos[i].activo = true;
   } 
 }
-  chocar() {
+  atrapados() {
     for (let i=0; i<this.cant; i++) {
 
       let distancia= dist(this.Pareja.pox+this.Pareja.tamo/2, this.Pareja.poy+this.Pareja.tamo/2,
@@ -128,4 +128,28 @@ reiniciar() {
       }
     }
     }
-}
+    estados(){
+  if (this.estado === "jugando") {
+     this.atrapados();
+     this.maspunto();
+    this. ganar();
+
+    if (keyIsPressed) {
+      this.actualizar();
+    }
+  }
+    }
+   pantallasgp(){
+  if (this.estado === "inicio") {
+    if (this.Boton.pressed()) {
+      this.comenzar(); 
+      return;
+    }
+  }
+
+  if (this.estado === "ganaste" || this.estado === "perdiste") {
+    if (this.Boton.pressed()) {
+      this.reiniciar();
+    }
+  }
+}}

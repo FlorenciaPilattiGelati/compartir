@@ -23,6 +23,7 @@ class Boton {
     textAlign(CENTER, CENTER);
     text("regresar al inicio", this.pa + this.t/2, this.pb + this.t2/2);
   }
+ 
 
   pressed() {
     return (mouseX > this.pa && mouseX < this.pa + this.t && mouseY > this.pb && mouseY < this.pb + this.t2);

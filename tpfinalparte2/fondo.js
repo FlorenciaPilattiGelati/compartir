@@ -1,18 +1,17 @@
-class Fondo {
-  constructor() {
-    this.eny = 0;
+class Fondo{
+  constructor(Y){
+    this.posX=0;
+    this.posY=Y;
+  }
+dibujarFondo(){
+ image(fondo,0, this.posY, width, height);
+ this.moverFondo();
   }
 
-  dibujardesierto() {
-    image(fondoc, 0, this.eny, width, height);
-    image(fondoc, 0, this.eny - height, width, height);
-
-    // movimiento
-    this.eny++;
-
-    // reinicio
-    if (this.eny > height) {
-      this.eny = 0;
+  moverFondo() {
+    if (this.posY > height) {
+      this.posY=-478;
     }
+    this.posY++;
   }
 }

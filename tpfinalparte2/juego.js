@@ -3,7 +3,8 @@ class Juego{
     this.tama=tam;
     this.cant=canti
     this.Pareja=new Pareja(tam);
-    this.Fondo=new Fondo();
+    this.fondo2= new Fondo(-480);
+    this.fondo = new Fondo(0)
     this.perder=[];
     this.puntos=[];
     this.Tiempo=new Tiempo();
@@ -28,12 +29,15 @@ dibujar(){
       text("Carrera contra el tiempo", 300, 100);
       textAlign(CENTER, CENTER);
       textSize(15);
-      text("Ann y rogger deben llegar al hotel a desayunar, pero no va a ser sencillo con el señor simms rondando Mantenete en movimiento, de izquierda a derecha, aercate a grupos, que van a estar marcados en verde, para protejerte y lo mas importante no te acerques a ninguno de los caballeros de traje gris, que van a estar marcados en rojo.", width/3.5, height/4.9, 250,250);
+     text("Ann y rogger deben llegar al hotel a desayunar, pero no va a ser sencillo con el señor simms rondando Mantenete en movimiento, de izquierda a derecha, aercate a grupos, que van a estar marcados en verde, para protejerte y lo mas importante no te acerques a ninguno de los caballeros de traje gris, que van a estar marcados en rojo.", width/3.5, height/4.9, 250,250);
+     textSize(15);
+      text("Lara Bordon y Florencia Pilatti Gelati", width/3.5, height/1.5, 250,250);
       this.Boton.dibujarboton("Jugar");
     }
     
     if (this.estado==="jugando") {
-    this.Fondo.dibujardesierto();
+    this.fondo.dibujarFondo();
+    this.fondo2.dibujarFondo()
     this.Pareja.dibujarPareja();
     this.Pareja.caminar();
     this.Pareja.moverPareja();
@@ -149,18 +153,17 @@ reiniciar() {
     }
   }
     }
-  pantallasgp() {
+   pantallasgp(){
   if (this.estado === "inicio") {
     if (this.Boton.pressed()) {
-      this.estado = "jugando";
+      this.comenzar(); 
       return;
     }
   }
+
   if (this.estado === "ganaste" || this.estado === "perdiste") {
-    if (this.Botonfin.pressed()) {
-      this.estado = "inicio";
+    if (this.Boton.pressed()) {
       this.reiniciar();
     }
   }
-}
-}
+}}

@@ -1,3 +1,5 @@
+//Lara Bordon y Florencia Pilatti Gelati
+//comision 1
 let empezar
 let imgpareja
 let puntosonido
@@ -25,3 +27,4 @@ function draw() {
 }
 function mouseClicked() {
    empezar.pantallasgp();} 
+

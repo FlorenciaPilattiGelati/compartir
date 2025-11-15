@@ -3,6 +3,8 @@ class Juego{
     this.tama=tam;
     this.cant=canti
     this.Pareja=new Pareja(tam);
+    this.fondo2= new Fondo(-480);
+    this.fondo = new Fondo(0)
     this.perder=[];
     this.puntos=[];
     this.Tiempo=new Tiempo();
@@ -32,6 +34,8 @@ dibujar(){
     }
     
     if (this.estado==="jugando") {
+    this.fondo.dibujarFondo();
+    this.fondo2.dibujarFondo()
     this.Pareja.dibujarPareja();
     this.Pareja.caminar();
     this.Pareja.moverPareja();
